@@ -14,6 +14,6 @@ Entropy regularization is a technique that promotes exploration by penalizing lo
 
 ## Results
 <p float = "center">
-<img src="https://github.com/user-attachments/assets/cfe7f8d8-de57-4fde-b569-4b67cc39a1d9" width="300" />
-<img src="https://github.com/user-attachments/assets/f213798e-e46b-478f-85ab-2ce056a40f79" width="300" />
+<img src="https://github.com/user-attachments/assets/cfe7f8d8-de57-4fde-b569-4b67cc39a1d9" width="400" />
+<img src="https://github.com/user-attachments/assets/f213798e-e46b-478f-85ab-2ce056a40f79" width="400" />
 </p>
