@@ -107,7 +107,7 @@ class StreamAC(nn.Module):
 
 def main(env_name, seed, lr, gamma, lamda, total_steps, entropy_coeff, kappa_policy, kappa_value, debug, overshooting_info, render=False):
     torch.manual_seed(seed); np.random.seed(seed)
-    env = gym.make(env_name, render_mode='human', max_episode_steps=10_000) if render else gym.make(env_name, max_episode_steps=10_000)
+    env = gym.make(env_name, render_mode='human', max_episode_steps=500) if render else gym.make(env_name, max_episode_steps=500) #Para CartPole max_episode_steps = 500. Antes estaba en 10000
     env = gym.wrappers.FlattenObservation(env)
     env = gym.wrappers.RecordEpisodeStatistics(env)
     env = ScaleReward(env, gamma=gamma)
@@ -140,12 +140,12 @@ def main(env_name, seed, lr, gamma, lamda, total_steps, entropy_coeff, kappa_pol
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Stream AC(λ)')
     parser.add_argument('--env_name', type=str, default='CartPole-v1')
-    parser.add_argument('--seed', type=int, default=0)
+    parser.add_argument('--seed', type=int, default=14)
     parser.add_argument('--lr', type=float, default=1.0)
     parser.add_argument('--gamma', type=float, default=0.99)
     parser.add_argument('--lamda', type=float, default=0.8)
     parser.add_argument('--total_steps', type=int, default=500_000)
-    parser.add_argument('--entropy_coeff', type=float, default=0.01)
+    parser.add_argument('--entropy_coeff', type=float, default=0.5) #0.01
     parser.add_argument('--kappa_policy', type=float, default=3.0)
     parser.add_argument('--kappa_value', type=float, default=2.0)
     parser.add_argument('--debug', action='store_true')
